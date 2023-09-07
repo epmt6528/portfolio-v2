@@ -13,6 +13,9 @@ export const theme = extendTheme({
       main: '#4B95C2',
       mark: '#D8B189',
     },
+    background: {
+      main: '#ADB8D0',
+    },
   },
   fontSizes: {
     xmini: '0.7em',
@@ -27,7 +30,7 @@ export const theme = extendTheme({
     global: {
       'html, body': {
         color: 'moji.main',
-        background: '#fff',
+        background: '#ADB8D0',
         lineHeight: '1.4142135623',
         fontSize: 'base',
         letterSpacing: '0.08em',
