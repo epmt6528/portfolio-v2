@@ -36,8 +36,7 @@ export const theme = extendTheme({
         letterSpacing: '0.08em',
         textAlign: 'justify',
         textJustify: 'inter-ideograph',
-        fontFamily:
-          '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic",Meiryo, sans-serif',
+        fontFamily: 'Montserrat, Arial, sans-serif',
       },
       a: {
         color: 'brand.main',
