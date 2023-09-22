@@ -1,8 +1,8 @@
-import { Box, Flex, Icon, Image, Link, Spacer } from '@chakra-ui/react';
+import { Box, Flex, Image, Spacer, Square } from '@chakra-ui/react';
 import richie from '../../assets/images/richie.png';
 import TextBox from '../common/TextBox/TextBox.tsx';
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import IconLink from '../common/IconLink/IconLink.tsx';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 const Landing = () => {
   return (
@@ -13,9 +13,10 @@ const Landing = () => {
           Murai
         </h1>
         <Spacer height={10} />
-        <Flex>
-          <IconLink icon={AiFillLinkedin} href='https://chakra-ui.com' />
-          <IconLink icon={AiFillGithub} href='https://chakra-ui.com' />
+        <Flex justifyContent='flex-start'>
+          <IconLink icon={FaLinkedinIn} href='https://chakra-ui.com' />
+          <Square px={2} />
+          <IconLink icon={FaGithub} href='https://chakra-ui.com' />
         </Flex>
       </Box>
 

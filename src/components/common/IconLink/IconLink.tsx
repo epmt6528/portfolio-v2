@@ -9,7 +9,7 @@ const IconLink = ({ icon, href }: IconLinkProps) => {
   const ICON_SIZE = 9;
   return (
     <Link href={href} isExternal>
-      <Icon as={icon} w={ICON_SIZE} h={ICON_SIZE} />
+      <Icon as={icon} w={ICON_SIZE} h={ICON_SIZE} color={'moji.main'} />
     </Link>
   );
 };

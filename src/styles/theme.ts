@@ -35,8 +35,9 @@ export const theme = extendTheme({
         fontFamily: 'Montserrat, Arial, sans-serif',
       },
       body: {
-        maxWidth: '1440px',
+        maxWidth: '1220px',
         margin: '0 auto',
+        padding: '0 20px',
       },
       a: {
         color: 'brand.main',
