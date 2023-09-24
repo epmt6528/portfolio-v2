@@ -2,7 +2,10 @@ import {
   Box,
   Flex,
   List,
+  ListIcon,
   ListItem,
+  Spacer,
+  Square,
   Step,
   StepDescription,
   StepIndicator,
@@ -13,6 +16,7 @@ import {
   Text,
   useSteps,
 } from '@chakra-ui/react';
+import { BiSquare } from 'react-icons/bi';
 
 const steps = [
   {
@@ -29,7 +33,7 @@ const steps = [
   },
   {
     title: 'Junior Software Developer',
-    company: 'Software Developer',
+    company: 'Sixfactor Professional Services Ltd.',
     duration: '2021 - 2022',
     website: 'https://sixfactor.com/',
     description: [
@@ -39,39 +43,55 @@ const steps = [
       'Design collaboration',
     ],
   },
-  { title: 'Langara College', description: ['Select Rooms'] },
 ];
 
+const stepperTitleStyle = {
+  fontSize: '1.5rem',
+  minWidth: '500px',
+};
+
 const HistoryStepper = () => {
-  const { activeStep } = useSteps({
+  const { activeStep, setActiveStep } = useSteps({
     index: 0,
     count: steps.length,
   });
 
+  const clickHandler = (index: number) => {
+    setActiveStep(index);
+  };
+
   return (
-    <Stepper size='sm' index={activeStep} orientation='vertical' height='400px' gap='0'>
+    <Stepper size='sm' index={activeStep} orientation='vertical' gap='0' cursor='pointer'>
       {steps.map((step, index) => (
-        <Step key={index} hidden={index !== activeStep}>
+        <Step key={index} onClick={() => clickHandler(index)}>
           <StepIndicator>
             <StepStatus />
           </StepIndicator>
 
           <Box>
-            <StepTitle>{step.title}</StepTitle>
-            <Flex>
-              <Text>{step.company}</Text>
-              <Text>{step.duration}</Text>
-            </Flex>
-
-            {index === activeStep ? (
+            <StepTitle as='h3' style={stepperTitleStyle}>
+              {step.title}
+              <Square size={5} />
+              <Flex>
+                <Text>{step.company}</Text>
+                <Spacer />
+                <Text>{step.duration}</Text>
+              </Flex>
+            </StepTitle>
+            <Square size={5} />
+            {activeStep === index ? (
               <StepDescription>
                 <List spacing={3}>
                   {step.description.map((description) => (
-                    <ListItem key={description}>{description}</ListItem>
+                    <ListItem key={description}>
+                      <ListIcon as={BiSquare} />
+                      {description}
+                    </ListItem>
                   ))}
                 </List>
               </StepDescription>
             ) : null}
+            <Square size={50} />
           </Box>
 
           <StepSeparator />
