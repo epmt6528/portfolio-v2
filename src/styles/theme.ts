@@ -67,6 +67,16 @@ export const theme = extendTheme({
           borderColor: 'brand.mark',
         },
       },
+      h3: {
+        fontWeight: 800,
+        fontSize: '1.5rem',
+        lineHeight: 1,
+        letterSpacing: 1,
+        color: 'solid.main',
+      },
+      p: {
+        fontSize: '1rem',
+      },
     },
   },
 });
